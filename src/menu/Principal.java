@@ -39,13 +39,13 @@ public class Principal {
         //new Exercicio5();
         //new Exercicio6();
         //new Exercicio7();
-        //new Exercicio8();
+        new Exercicio8();
         //new Exercicio9();
         //new Exercicio10();
         //new Exercicio11();
         //new Exercicio12();
         //new Exercicio13();
        // new Exercicio14();
-       new Exercicio15();
+       //new Exercicio15();
     }
 }

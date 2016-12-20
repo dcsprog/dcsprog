@@ -19,8 +19,8 @@ public class Exercicio8 {
     
     
     public static void solucao8(){
-        int num1=0, maior=10, menor=0, cont=0;
-        Random rand = new Random();
+        int num1=0, cont=0;
+        int rand = aleatorio(10,0);
         Scanner n = new Scanner(System.in);
         boolean jogo=true;
         char opc=' ';
@@ -28,21 +28,36 @@ public class Exercicio8 {
             
             System.out.println("Escolha uma opcao para o jogo Somo e Desce:\n\n"
                     + "numero maior -->  c \n\nnumero menor --> b\n\n");
-            if(cont==0){
-            num1=rand.nextInt(maior-menor);
-            }
+            
             
             System.out.println(num1);
             opc=n.nextLine().charAt(0);
         
+            int ale;
+            do{
+                ale=aleatorio(10,0);
+            }while(ale==rand);
+            
             switch(opc){
                 case 'c':
-                    num1=aleatorio(num1,maior);
-                    cont++;
+                    if(ale<rand){
+                        System.out.println("Acertou...");
+                        cont++;
+                    }else {
+                        System.out.println("Sorry, tente outra vez");
+                        jogo=false;
+                       
+                    }
                     break;
                 case 'b':
-                    num1=aleatorio(menor,num1);
-                    cont++;
+                    if(ale>rand){
+                        System.out.println("Acertou...");
+                        cont++;
+                    }else {
+                        System.out.println("Sorry, tente outra vez");
+                        jogo=false;
+                       
+                    }
                     break;
             }
             
@@ -50,13 +65,13 @@ public class Exercicio8 {
         
         
         }while(jogo);
-        
+        System.out.println("Voce consegui acertar "+cont+" vezes....");
         
     }
     
     public static int aleatorio(int min, int max){
         Random rand = new Random();
-        return rand.nextInt((max - min)+1)+min;
+        return rand.nextInt((10- 0)+1)+0;
     }
     
 }
